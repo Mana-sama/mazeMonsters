@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - enemy
+  - Door
+  - Stairs
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - floor
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - button
+  m_SortingLayers:
+  - name: floor
+    uniqueID: 2037607129
+    locked: 0
+  - name: backBg
+    uniqueID: 3905068985
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: player
+    uniqueID: 3452486393
+    locked: 0
+  - name: wall
+    uniqueID: 3133518397
+    locked: 0
+  - name: spectre
+    uniqueID: 1568879535
+    locked: 0
+  - name: button
+    uniqueID: 76623155
+    locked: 0
+  m_RenderingLayers:
+  - Default

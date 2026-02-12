@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: c89b815fda5fc004c9750bfe38bc6912
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3144677389578948650
+    second: ZONE2Extras_0
+  - first:
+      213: -6626672538512601138
+    second: ZONE2Extras_1
+  - first:
+      213: 569140311034514565
+    second: ZONE2Extras_2
+  - first:
+      213: -7183087579836776452
+    second: ZONE2Extras_3
+  - first:
+      213: -4866745569539109320
+    second: ZONE2Extras_4
+  - first:
+      213: -8412783832152157291
+    second: ZONE2Extras_5
+  - first:
+      213: 5921558877458982927
+    second: ZONE2Extras_6
+  - first:
+      213: 3742040348601926784
+    second: ZONE2Extras_7
+  - first:
+      213: -3439838813621151182
+    second: ZONE2Extras_8
+  - first:
+      213: 2402435254304810976
+    second: ZONE2Extras_9
+  - first:
+      213: 2426614184506984823
+    second: ZONE2Extras_10
+  - first:
+      213: 4747064816904659106
+    second: ZONE2Extras_11
+  - first:
+      213: -632597352244394057
+    second: ZONE2Extras_12
+  - first:
+      213: 592339683823493938
+    second: ZONE2Extras_13
+  - first:
+      213: 6317255578056102413
+    second: ZONE2Extras_14
+  - first:
+      213: 4700001388918178263
+    second: ZONE2Extras_15
+  - first:
+      213: 2277041914037591890
+    second: ZONE2Extras_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ZONE2Extras_0
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 1586
+        width: 354
+        height: 366
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dfa1fc439cdb54d0800000000000000
+      internalID: -3144677389578948650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZONE2Extras_1
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 1375
+        width: 162
+        height: 458
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecfce139f645904a0800000000000000
+      internalID: -6626672538512601138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZONE2Extras_2
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 1704
+        width: 278
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58c4192f81ef5e700800000000000000
+      internalID: 569140311034514565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZONE2Extras_3
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 1535
+        width: 261
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfffe4d57eb805c90800000000000000
+      internalID: -7183087579836776452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZONE2Extras_4
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 1411
+        width: 354
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83e4a6b80b8d57cb0800000000000000
+      internalID: -4866745569539109320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZONE2Extras_5
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 1281
+        width: 123
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 593db607da9cf3b80800000000000000
+      internalID: -8412783832152157291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZONE2Extras_6
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 1281
+        width: 123
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f08e08fdc6a9d2250800000000000000
+      internalID: 5921558877458982927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZONE2Extras_7
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 627
+        width: 175
+        height: 687
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 084c891fed56ee330800000000000000
+      internalID: 3742040348601926784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZONE2Extras_8
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1146
+        width: 483
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23a9285f2dc3340d0800000000000000
+      internalID: -3439838813621151182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZONE2Extras_9
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 1024
+        width: 138
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e7a6b8922a275120800000000000000
+      internalID: 2402435254304810976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZONE2Extras_10
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 1024
+        width: 139
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 779867a7eb01da120800000000000000
+      internalID: 2426614184506984823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZONE2Extras_11
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 864
+        width: 658
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a06b59cc46f0e140800000000000000
+      internalID: 4747064816904659106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZONE2Extras_12
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 585
+        width: 357
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b7ce9d4f009837f0800000000000000
+      internalID: -632597352244394057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZONE2Extras_13
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 585
+        width: 329
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 233aaa8ddc9683800800000000000000
+      internalID: 592339683823493938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZONE2Extras_14
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 54
+        width: 484
+        height: 484
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d02936d5a766ba750800000000000000
+      internalID: 6317255578056102413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZONE2Extras_15
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 339
+        width: 658
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d18f4e8c52c93140800000000000000
+      internalID: 4700001388918178263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZONE2Extras_16
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 83
+        width: 658
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25fd2e87e8da99f10800000000000000
+      internalID: 2277041914037591890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ZONE2Extras_0: -3144677389578948650
+      ZONE2Extras_1: -6626672538512601138
+      ZONE2Extras_10: 2426614184506984823
+      ZONE2Extras_11: 4747064816904659106
+      ZONE2Extras_12: -632597352244394057
+      ZONE2Extras_13: 592339683823493938
+      ZONE2Extras_14: 6317255578056102413
+      ZONE2Extras_15: 4700001388918178263
+      ZONE2Extras_16: 2277041914037591890
+      ZONE2Extras_2: 569140311034514565
+      ZONE2Extras_3: -7183087579836776452
+      ZONE2Extras_4: -4866745569539109320
+      ZONE2Extras_5: -8412783832152157291
+      ZONE2Extras_6: 5921558877458982927
+      ZONE2Extras_7: 3742040348601926784
+      ZONE2Extras_8: -3439838813621151182
+      ZONE2Extras_9: 2402435254304810976
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
