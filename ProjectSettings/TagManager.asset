@@ -7,6 +7,7 @@ TagManager:
   - enemy
   - Door
   - Stairs
+  - npc
   layers:
   - Default
   - TransparentFX

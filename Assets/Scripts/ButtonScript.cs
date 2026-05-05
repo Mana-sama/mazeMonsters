@@ -7,7 +7,6 @@ public class ButtonScript : MonoBehaviour
     public GameObject ExitLevel;
     public GameObject ReturnTOLevel;
 
-
     void Start()
     {
     
@@ -17,6 +16,7 @@ public class ButtonScript : MonoBehaviour
     {
         
     }
+
 
     public void CloseWindow()
     {
