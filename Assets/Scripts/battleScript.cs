@@ -23,6 +23,11 @@ public class battleScript : MonoBehaviour
     public Text EHealthText;
     private int EAtk = 10;
 
+    public GameObject Luck1;
+    public GameObject Luck2;
+    public GameObject Fortune;
+
+
     void Start()
     {
         battle = GetComponent<Animator>();
@@ -137,6 +142,29 @@ public void ChangeToItem()
 
     }
 
+    //////////////////////////
 
+    public void useLuck1()
+    {
+        PHealth += 50;
+        UpdatePHealthText();
+        Luck1.gameObject.SetActive(false);
+    }
+
+    public void useLuck2()
+    {
+        PHealth += 50;
+        UpdatePHealthText();
+        Luck2.gameObject.SetActive(false);
+    }
+
+    public void useFortune()
+    {
+        PHealth += 150;
+        UpdatePHealthText();
+        Fortune.gameObject.SetActive(false);
+    }
+
+    /////////////////////////////
 
 }

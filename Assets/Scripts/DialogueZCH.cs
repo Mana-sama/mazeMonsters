@@ -20,15 +20,20 @@ public class DialogueZCH : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Time.timeScale = 0;
+
                 textBox.SetActive(true);
                 ZCFieldForText.SetActive(true);
 
                 ZCDialogueText.SetText("Congratulations! The script worked. -ZACHARIE");
+
+                Time.timeScale = 1;
             }
 
         }
 
     }
+
 
 
 }

@@ -19,10 +19,14 @@ public class DialogueTNB : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Time.timeScale = 0;
+
                 textBox.SetActive(true);
                 TNFieldForText.SetActive(true);
 
                 TNDialogueText.SetText("Congratulations! The script worked. -TENEBI");
+
+                Time.timeScale = 1;
             }
 
         }

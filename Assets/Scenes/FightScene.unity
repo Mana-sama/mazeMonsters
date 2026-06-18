@@ -1448,7 +1448,7 @@ GameObject:
   - component: {fileID: 757402559}
   - component: {fileID: 757402558}
   m_Layer: 5
-  m_Name: ItemButton (2)
+  m_Name: Fortune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1518,7 +1518,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 757402559}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1086275486}
+        m_TargetAssemblyTypeName: battleScript, Assembly-CSharp
+        m_MethodName: useFortune
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &757402559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1807,7 +1819,7 @@ GameObject:
   - component: {fileID: 999195606}
   - component: {fileID: 999195605}
   m_Layer: 5
-  m_Name: ItemButton
+  m_Name: Luck1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1856,8 +1868,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
-    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 0, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1877,7 +1889,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 999195606}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1086275486}
+        m_TargetAssemblyTypeName: battleScript, Assembly-CSharp
+        m_MethodName: useLuck1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &999195606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2361,6 +2385,9 @@ MonoBehaviour:
   ItemMenu: {fileID: 1314606032}
   PHealthText: {fileID: 1532618075}
   EHealthText: {fileID: 1958855492}
+  Luck1: {fileID: 999195603}
+  Luck2: {fileID: 1437763573}
+  Fortune: {fileID: 757402556}
 --- !u!1 &1118200071
 GameObject:
   m_ObjectHideFlags: 0
@@ -2752,7 +2779,7 @@ GameObject:
   - component: {fileID: 1437763576}
   - component: {fileID: 1437763575}
   m_Layer: 5
-  m_Name: ItemButton (1)
+  m_Name: Luck2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2822,7 +2849,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1437763576}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1086275486}
+        m_TargetAssemblyTypeName: battleScript, Assembly-CSharp
+        m_MethodName: useLuck2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1437763576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3305,7 +3344,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7006251584256992229, guid: 219adbd1c4dfa404ca7d1c292df7d23f, type: 3}
+  m_Sprite: {fileID: -2547073680148863737, guid: 6d1610b157e70f84cac27682c6621278, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
