@@ -2379,6 +2379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881acc043110d1c4cb3d3097bee9a9c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitSeconds: 7
   BattleText: {fileID: 195651614}
   ButtonCover: {fileID: 1032288699}
   HpMenu: {fileID: 1652256803}
@@ -2388,6 +2389,7 @@ MonoBehaviour:
   Luck1: {fileID: 999195603}
   Luck2: {fileID: 1437763573}
   Fortune: {fileID: 757402556}
+  AttackButton: {fileID: 1879762783}
 --- !u!1 &1118200071
 GameObject:
   m_ObjectHideFlags: 0
@@ -3926,7 +3928,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2067188857}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1086275486}
+        m_TargetAssemblyTypeName: battleScript, Assembly-CSharp
+        m_MethodName: FleeButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2067188857
 MonoBehaviour:
   m_ObjectHideFlags: 0

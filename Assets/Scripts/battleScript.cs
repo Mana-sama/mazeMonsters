@@ -5,6 +5,9 @@ using System.Collections;
 
 public class battleScript : MonoBehaviour
 {
+    public float waitSeconds = 7;
+
+
     private float timer;
     private Animator battle;
 
@@ -27,12 +30,16 @@ public class battleScript : MonoBehaviour
     public GameObject Luck2;
     public GameObject Fortune;
 
+    public Button AttackButton;
+
 
     void Start()
     {
         battle = GetComponent<Animator>();
         UpdatePHealthText();
         UpdateEHealthText();
+       // AttackButton.interactable = true;
+        // AttackButton.gameObject.SetActive(false);
     }
 
     void Update()
@@ -51,11 +58,21 @@ public class battleScript : MonoBehaviour
 
     public void Attack()
     {
+       // StartCoroutine(AttackWait());
         StartCoroutine(AttackRoutine());
     }
 
+    /*
+    IEnumerator AttackWait()
+    {
+        yield return new WaitForSeconds(3);
+        AttackButton.interactable = false;
+    }
+    
+    */
     IEnumerator AttackRoutine()
     {
+
         // 1. ???
         Vector3 startPos = transform.position;
         Vector3 targetPos = startPos + new Vector3(6, 0, 0);
@@ -91,14 +108,47 @@ public class battleScript : MonoBehaviour
             if (ButtonCover) ButtonCover.gameObject.SetActive(true);
 
             yield return new WaitForSeconds(4f);
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("ZONE0"); //after save system is made change it to current zone
         }
         else
         {
             yield return new WaitForSeconds(0.5f);
             StartCoroutine(TakeDmgRoutine());
         }
+
+        /*
+        yield return new WaitForSeconds(4);
+        AttackButton.interactable = false;
+        */
+       // AttackButton.interactable = true;
+
     }
+
+    public void FleeButton()
+    {
+        Flee();
+    }
+    IEnumerator Flee()
+    {
+        int random = Random.Range(1, 3);
+
+        if (random == 1)
+        {
+            SceneManager.LoadScene("ZONE0");  //after save system is made change it to current zone
+            if (BattleText) BattleText.text = "You escaped!";
+        }
+
+        else
+        {
+            if (BattleText) BattleText.text = "You failed to escape.";
+            yield return new WaitForSeconds(waitSeconds);
+            if (BattleText) BattleText.text = "Purification in progress...";
+
+        }
+
+    }
+
+
 
     public void TakeDmg()
     {
@@ -128,6 +178,10 @@ public class battleScript : MonoBehaviour
         }
     }
 
+
+
+    ///////////////////////// buttons below
+
 public void ChangeToItem()
     {
         HpMenu.gameObject.SetActive(false);
@@ -142,27 +196,80 @@ public void ChangeToItem()
 
     }
 
-    //////////////////////////
+    ////////////////////////// heal below
 
     public void useLuck1()
     {
+        if (PHealth >= 200)
+        {
+            PHealth = 200;
+            UpdatePHealthText();
+        }
+
+        if (PHealth >= 151)
+        {
+            PHealth = 200;
+            UpdatePHealthText();
+            Luck1.gameObject.SetActive(false);
+        }
+
+        else
+        {
         PHealth += 50;
         UpdatePHealthText();
         Luck1.gameObject.SetActive(false);
+
+        }
+
     }
 
     public void useLuck2()
     {
-        PHealth += 50;
-        UpdatePHealthText();
-        Luck2.gameObject.SetActive(false);
+        if (PHealth >= 200)
+        {
+            PHealth = 200;
+            UpdatePHealthText();
+        }
+
+        if (PHealth >= 151)
+        {
+            PHealth = 200;
+            UpdatePHealthText();
+            Luck2.gameObject.SetActive(false);
+        }
+
+        else
+        {
+            PHealth += 50;
+            UpdatePHealthText();
+            Luck2.gameObject.SetActive(false);
+
+        }
     }
 
     public void useFortune()
     {
+        if (PHealth >= 200)
+        {
+            PHealth = 200;
+            UpdatePHealthText();
+        }
+
+        if(PHealth >= 51)
+        {
+            PHealth = 200;
+            UpdatePHealthText();
+            Fortune.gameObject.SetActive(false);
+        }
+
+        else
+        {
         PHealth += 150;
         UpdatePHealthText();
         Fortune.gameObject.SetActive(false);
+
+        }
+
     }
 
     /////////////////////////////
