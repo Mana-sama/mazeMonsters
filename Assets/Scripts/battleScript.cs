@@ -7,8 +7,6 @@ public class battleScript : MonoBehaviour
 {
     public float waitSeconds = 7;
 
-
-    private float timer;
     private Animator battle;
 
     public Text BattleText;
@@ -20,7 +18,6 @@ public class battleScript : MonoBehaviour
     private int PHealth = 200;
     public Text PHealthText;
     private int PAtk = 15;
-    bool isDead;
 
     private int EHealth = 45;
     public Text EHealthText;
@@ -31,19 +28,20 @@ public class battleScript : MonoBehaviour
     public GameObject Fortune;
 
     public Button AttackButton;
+    public Button FleeButtonUI; // НОВЕ: Кнопка втечі для КД
 
+    public Transform EnemyTransform;
+
+    private bool battleEnded = false;
+    private bool canFlee = true; // НОВЕ: Перевірка КД втечі
 
     void Start()
     {
         battle = GetComponent<Animator>();
         UpdatePHealthText();
         UpdateEHealthText();
-       // AttackButton.interactable = true;
-        // AttackButton.gameObject.SetActive(false);
-    }
 
-    void Update()
-    {
+        StartCoroutine(EnemyAttackLoop());
     }
 
     private void UpdatePHealthText()
@@ -58,28 +56,20 @@ public class battleScript : MonoBehaviour
 
     public void Attack()
     {
-       // StartCoroutine(AttackWait());
+        if (battleEnded || !AttackButton.interactable) return;
         StartCoroutine(AttackRoutine());
     }
 
-    /*
-    IEnumerator AttackWait()
-    {
-        yield return new WaitForSeconds(3);
-        AttackButton.interactable = false;
-    }
-    
-    */
     IEnumerator AttackRoutine()
     {
+        AttackButton.interactable = false;
 
-        // 1. ???
         Vector3 startPos = transform.position;
         Vector3 targetPos = startPos + new Vector3(6, 0, 0);
         float duration = 0.5f;
         float elapsed = 0;
 
-        while (elapsed < duration) // ??????
+        while (elapsed < duration)
         {
             transform.position = Vector3.Lerp(startPos, targetPos, elapsed / duration);
             elapsed += Time.deltaTime;
@@ -87,14 +77,13 @@ public class battleScript : MonoBehaviour
         }
         transform.position = targetPos;
 
-        // 2. ????
-        EHealth = EHealth - PAtk;
+        EHealth -= PAtk;
         UpdateEHealthText();
 
         yield return new WaitForSeconds(0.2f);
 
         elapsed = 0;
-        while (elapsed < duration) // ?????
+        while (elapsed < duration)
         {
             transform.position = Vector3.Lerp(targetPos, startPos, elapsed / duration);
             elapsed += Time.deltaTime;
@@ -104,174 +93,167 @@ public class battleScript : MonoBehaviour
 
         if (EHealth <= 0)
         {
+            battleEnded = true;
             if (BattleText) BattleText.text = "You won!";
-            if (ButtonCover) ButtonCover.gameObject.SetActive(true);
+            if (ButtonCover) ButtonCover.SetActive(true);
 
-            yield return new WaitForSeconds(4f);
-            SceneManager.LoadScene("ZONE0"); //after save system is made change it to current zone
+            // ЗБЕРЕЖЕННЯ: Позначаємо поточного ворога як мертвого
+            string currentEnemy = PlayerPrefs.GetString("CurrentEnemy", "");
+            if (!string.IsNullOrEmpty(currentEnemy))
+            {
+                PlayerPrefs.SetInt(currentEnemy + "_Dead", 1);
+                PlayerPrefs.Save();
+            }
+
+            StartCoroutine(WinSequence());
         }
         else
         {
-            yield return new WaitForSeconds(0.5f);
-            StartCoroutine(TakeDmgRoutine());
+            // КД АТАКИ ГРАВЦЯ (ЗБІЛЬШЕНО)
+            yield return new WaitForSeconds(2f);
+            if (!battleEnded) AttackButton.interactable = true;
         }
+    }
 
-        /*
-        yield return new WaitForSeconds(4);
-        AttackButton.interactable = false;
-        */
-       // AttackButton.interactable = true;
+    IEnumerator WinSequence()
+    {
+        yield return new WaitForSeconds(4f);
+        // Завантажуємо попередню сцену замість хардкоду
+        SceneManager.LoadScene(PlayerPrefs.GetString("LastScene", "ZONE0"));
+    }
 
+    IEnumerator EnemyAttackLoop()
+    {
+        while (!battleEnded)
+        {
+            // КД АТАКИ ВОРОГА (ЗМЕНШЕНО)
+            float waitTime = Random.Range(2f, 4f);
+            yield return new WaitForSeconds(waitTime);
+
+            if (!battleEnded)
+            {
+                StartCoroutine(EnemyAttackAction());
+            }
+        }
+    }
+
+    IEnumerator EnemyAttackAction()
+    {
+        if (EnemyTransform != null)
+        {
+            Vector3 startPos = EnemyTransform.position;
+            Vector3 targetPos = startPos + new Vector3(-6, 0, 0);
+            float duration = 0.5f;
+            float elapsed = 0;
+
+            while (elapsed < duration)
+            {
+                EnemyTransform.position = Vector3.Lerp(startPos, targetPos, elapsed / duration);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+            EnemyTransform.position = targetPos;
+
+            TakeDmg();
+
+            yield return new WaitForSeconds(0.2f);
+
+            elapsed = 0;
+            while (elapsed < duration)
+            {
+                EnemyTransform.position = Vector3.Lerp(targetPos, startPos, elapsed / duration);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+            EnemyTransform.position = startPos;
+        }
+        else
+        {
+            TakeDmg();
+        }
     }
 
     public void FleeButton()
     {
-        Flee();
+        if (battleEnded || !canFlee) return;
+        StartCoroutine(Flee());
     }
+
     IEnumerator Flee()
     {
+        canFlee = false;
+        if (FleeButtonUI != null) FleeButtonUI.interactable = false;
+
         int random = Random.Range(1, 3);
 
         if (random == 1)
         {
-            SceneManager.LoadScene("ZONE0");  //after save system is made change it to current zone
+            battleEnded = true;
             if (BattleText) BattleText.text = "You escaped!";
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene(PlayerPrefs.GetString("LastScene", "ZONE0"));
         }
-
         else
         {
             if (BattleText) BattleText.text = "You failed to escape.";
-            yield return new WaitForSeconds(waitSeconds);
-            if (BattleText) BattleText.text = "Purification in progress...";
 
+            // Запускаємо КД на 20 секунд перед тим, як знову можна буде спробувати втекти
+            yield return new WaitForSeconds(20f);
+
+            if (!battleEnded)
+            {
+                canFlee = true;
+                if (FleeButtonUI != null) FleeButtonUI.interactable = true;
+                if (BattleText) BattleText.text = "You can try to flee again.";
+            }
         }
-
     }
-
-
 
     public void TakeDmg()
     {
-        StartCoroutine(TakeDmgRoutine());
-    }
-
-    IEnumerator TakeDmgRoutine()
-    {
-        PHealth = PHealth - EAtk;
+        PHealth -= EAtk;
         UpdatePHealthText();
 
-        if (PHealth <= 0)
+        if (PHealth <= 0 && !battleEnded)
         {
+            battleEnded = true;
             if (BattleText) BattleText.text = "You lost!";
             if (battle != null) battle.SetBool("isDead", true);
 
-            yield return new WaitForSeconds(4f);
-            SceneManager.LoadScene("GameOver");
+            StartCoroutine(LoseSequence());
         }
-        else
+        else if (!battleEnded)
         {
-            if (battle != null) battle.SetBool("isHurt", true);
-
-            yield return new WaitForSeconds(2.3f);
-
-            if (battle != null) battle.SetBool("isHurt", false);
+            StartCoroutine(HurtAnim());
         }
     }
 
-
-
-    ///////////////////////// buttons below
-
-public void ChangeToItem()
+    IEnumerator HurtAnim()
     {
-        HpMenu.gameObject.SetActive(false);
-        ItemMenu.gameObject.SetActive(true);
-
+        if (battle != null) battle.SetBool("isHurt", true);
+        yield return new WaitForSeconds(2.3f);
+        if (battle != null) battle.SetBool("isHurt", false);
     }
 
-    public void ChangeToHp()
+    IEnumerator LoseSequence()
     {
-        HpMenu.gameObject.SetActive(true);
-        ItemMenu.gameObject.SetActive(false);
-
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene("GameOver");
     }
 
-    ////////////////////////// heal below
+    public void ChangeToItem() { HpMenu.SetActive(false); ItemMenu.SetActive(true); }
+    public void ChangeToHp() { HpMenu.SetActive(true); ItemMenu.SetActive(false); }
 
-    public void useLuck1()
+    public void useLuck1() { Heal(50, Luck1); }
+    public void useLuck2() { Heal(50, Luck2); }
+    public void useFortune() { Heal(150, Fortune); }
+
+    private void Heal(int amount, GameObject itemObj)
     {
-        if (PHealth >= 200)
-        {
-            PHealth = 200;
-            UpdatePHealthText();
-        }
-
-        if (PHealth >= 151)
-        {
-            PHealth = 200;
-            UpdatePHealthText();
-            Luck1.gameObject.SetActive(false);
-        }
-
-        else
-        {
-        PHealth += 50;
+        if (PHealth >= 200) return;
+        PHealth += amount;
+        if (PHealth > 200) PHealth = 200;
         UpdatePHealthText();
-        Luck1.gameObject.SetActive(false);
-
-        }
-
+        if (itemObj != null) itemObj.SetActive(false);
     }
-
-    public void useLuck2()
-    {
-        if (PHealth >= 200)
-        {
-            PHealth = 200;
-            UpdatePHealthText();
-        }
-
-        if (PHealth >= 151)
-        {
-            PHealth = 200;
-            UpdatePHealthText();
-            Luck2.gameObject.SetActive(false);
-        }
-
-        else
-        {
-            PHealth += 50;
-            UpdatePHealthText();
-            Luck2.gameObject.SetActive(false);
-
-        }
-    }
-
-    public void useFortune()
-    {
-        if (PHealth >= 200)
-        {
-            PHealth = 200;
-            UpdatePHealthText();
-        }
-
-        if(PHealth >= 51)
-        {
-            PHealth = 200;
-            UpdatePHealthText();
-            Fortune.gameObject.SetActive(false);
-        }
-
-        else
-        {
-        PHealth += 150;
-        UpdatePHealthText();
-        Fortune.gameObject.SetActive(false);
-
-        }
-
-    }
-
-    /////////////////////////////
-
 }
