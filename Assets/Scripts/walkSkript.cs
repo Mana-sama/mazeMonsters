@@ -17,27 +17,44 @@ public class walkSkript : MonoBehaviour
 
     void Update()
     {
-        moveInput = Vector2.zero;
+        //moveInput = Vector2.zero;
 
-        if (Keyboard.current != null)
-        {
-            if (Keyboard.current.wKey.isPressed)
-            {
-                moveInput.y += 1f;
-            }
-            if (Keyboard.current.sKey.isPressed)
-            {
-                moveInput.y -= 1f;
-            }
-            if (Keyboard.current.aKey.isPressed)
-            {
-                moveInput.x -= 1f;
-            }
-            if (Keyboard.current.dKey.isPressed)
-            {
-                moveInput.x += 1f;
-            }
-        }
+        float vertical = Input.GetAxisRaw("Vertical");
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        moveInput = new Vector2(horizontal, vertical);
+
+        //if (Keyboard.current != null)
+        //{
+        //    if (Keyboard.current.wKey.isPressed)
+        //    {
+        //        moveInput.y += 1f;
+        //    }
+        //    else if (Keyboard.current.sKey.isPressed)
+        //    {
+        //        moveInput.y -= 1f;
+        //    }
+        //    else
+        //    {
+        //        moveInput.y = 0f;
+        //    }
+
+        //    if (Keyboard.current.aKey.isPressed)
+        //    {
+        //        moveInput.x -= 1f;
+        //    }
+        //    else if (Keyboard.current.dKey.isPressed)
+        //    {
+        //        moveInput.x += 1f;
+        //    }
+        //    else
+        //    {
+        //        moveInput.x = 0f;
+        //    }
+        //}
+        //else
+        //{
+        //    moveInput = Vector2.zero;
+        //}
 
         if (moveInput.magnitude > 1f)
         {
@@ -46,10 +63,10 @@ public class walkSkript : MonoBehaviour
 
         rb.linearVelocity = moveInput * speed;
 
-        if (moveInput.sqrMagnitude > 0.001f)
-        {
-            lastMoveInput = moveInput.normalized;
-        }
+        //if (moveInput.sqrMagnitude > 0.001f)
+        //{
+        //    lastMoveInput = moveInput.normalized;
+        //}
 
         if (animator == null && rb != null)
         {
@@ -58,8 +75,8 @@ public class walkSkript : MonoBehaviour
 
         if (animator != null)
         {
-            animator.SetFloat("MoveX", lastMoveInput.x);
-            animator.SetFloat("MoveY", lastMoveInput.y);
+            animator.SetFloat("MoveX", moveInput.x);
+            animator.SetFloat("MoveY", moveInput.y);
             animator.SetBool("IsMoving", moveInput.sqrMagnitude > 0.001f);
         }
     }
